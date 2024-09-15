@@ -1,6 +1,6 @@
 resource "github_repository" "repo" {
   name        = local.repository_name
-  description = "An API created using Axum"
+  description = "Infrastructure as Code for Lerpz.com"
   visibility  = "public"
 
   vulnerability_alerts = true
