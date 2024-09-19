@@ -7,14 +7,18 @@ resource "azurerm_public_ip" "primary" {
   name                = "${local.repository_name}-pip"
   location            = azurerm_resource_group.network.location
   resource_group_name = azurerm_resource_group.network.name
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "azurerm_virtual_network" "primary" {
   name                = "${local.repository_name}-vnet"
   location            = azurerm_resource_group.network.location
   resource_group_name = azurerm_resource_group.network.name
-  address_space       = ["10.0.0.0/16"]
+  address_space       = ["10.0.0.0/8"]
 }
 
 resource "azurerm_network_security_group" "primary" {
