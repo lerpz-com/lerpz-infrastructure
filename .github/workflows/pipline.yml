@@ -1,12 +1,12 @@
-name: CI/CD
+name: CI/CD Pipeline
 
 on:
   workflow_dispatch:
   push:
+    paths:
+      - terraform/**
     branches:
       - '**'
-    paths-ignore:
-      - 'README.md'
   
 jobs:
   wf:
