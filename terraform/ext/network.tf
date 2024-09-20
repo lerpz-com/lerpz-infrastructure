@@ -27,8 +27,8 @@ resource "azurerm_network_security_group" "primary" {
   resource_group_name = azurerm_resource_group.network.name
 }
 
-resource "azurerm_subnet" "backend" {
-  name                 = "${local.repository_name}-subnet"
+resource "azurerm_subnet" "psql" {
+  name                 = "${local.repository_name}-psql"
   resource_group_name  = azurerm_resource_group.network.name
   virtual_network_name = azurerm_virtual_network.primary.name
 
