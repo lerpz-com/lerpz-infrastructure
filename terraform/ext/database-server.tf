@@ -13,7 +13,7 @@ resource "azurerm_postgresql_flexible_server" "primary" {
   sku_name               = "B_Standard_B1ms"
 
   storage_mb            = 32768
-  version               = "12"
+  version               = "16"
   auto_grow_enabled     = false
   backup_retention_days = 7
 
