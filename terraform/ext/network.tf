@@ -48,7 +48,7 @@ resource "azurerm_subnet" "psql" {
 }
 
 resource "azurerm_subnet_network_security_group_association" "backend" {
-  subnet_id                 = azurerm_subnet.backend.id
+  subnet_id                 = azurerm_subnet.psql.id
   network_security_group_id = azurerm_network_security_group.primary.id
 }
 
@@ -62,5 +62,5 @@ resource "azurerm_private_dns_zone_virtual_network_link" "database" {
   private_dns_zone_name = azurerm_private_dns_zone.database.name
   virtual_network_id    = azurerm_virtual_network.primary.id
   resource_group_name   = azurerm_resource_group.network.name
-  depends_on            = [azurerm_subnet.backend]
+  depends_on            = [azurerm_subnet.psql]
 }
