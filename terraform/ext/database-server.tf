@@ -23,8 +23,5 @@ resource "azurerm_postgresql_flexible_server" "primary" {
 
   lifecycle {
     prevent_destroy = true
-    ignore_changes = [
-      zone
-    ]
   }
 }

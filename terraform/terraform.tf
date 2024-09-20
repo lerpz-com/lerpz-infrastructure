@@ -11,8 +11,8 @@ terraform {
   }
 
   backend "azurerm" {
-    resource_group_name  = "lerpz-infrastructure-tfstate"
-    storage_account_name = "tfstatex6a7m"
+    resource_group_name  = "lerpz-infrastructure-ext"
+    storage_account_name = "tfstatenj902"
     key                  = "terraform.tfstate"
   }
 
