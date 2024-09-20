@@ -7,6 +7,7 @@ resource "azurerm_postgresql_flexible_server" "primary" {
   name                = "${local.repository_name}-pgs"
   resource_group_name = azurerm_resource_group.database.name
   location            = azurerm_resource_group.database.location
+  zone                = 3
 
   administrator_login    = var.database_username
   administrator_password = var.database_password
