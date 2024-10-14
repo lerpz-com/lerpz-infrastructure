@@ -26,3 +26,9 @@ resource "azurerm_postgresql_flexible_server" "primary" {
     prevent_destroy = true
   }
 }
+
+resource "azurerm_postgresql_flexible_server_configuration" "primary" {
+  name      = "azure.extensions"
+  server_id = azurerm_postgresql_flexible_server.primary.id
+  value     = "uuid-ossp"
+}
