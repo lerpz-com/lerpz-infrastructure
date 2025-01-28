@@ -15,18 +15,18 @@ resource "azurerm_storage_account" "tfstate" {
 
 resource "azurerm_storage_container" "tfstate_ext" {
   name                  = "tfstate-ext"
-  storage_account_name  = azurerm_storage_account.tfstate.name
+  storage_account_id  = azurerm_storage_account.tfstate.name
   container_access_type = "private"
 }
 
 resource "azurerm_storage_container" "tfstate_stag" {
   name                  = "tfstate-stag"
-  storage_account_name  = azurerm_storage_account.tfstate.name
+  storage_account_id  = azurerm_storage_account.tfstate.name
   container_access_type = "private"
 }
 
 resource "azurerm_storage_container" "tfstate_prod" {
   name                  = "tfstate-prod"
-  storage_account_name  = azurerm_storage_account.tfstate.name
+  storage_account_id  = azurerm_storage_account.tfstate.name
   container_access_type = "private"
 }
